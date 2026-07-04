@@ -61,6 +61,26 @@ def predict_sepsis(patient_df):
 
     latest_row = latest_row.drop(columns=["Patient_ID"])
 
+    latest_row = latest_row[
+    [
+        "HR","O2Sat","Temp","SBP","MAP","DBP","Resp",
+        "Age","ICULOS",
+        "HR_RollingMean_3","O2Sat_RollingMean_3","Temp_RollingMean_3",
+        "SBP_RollingMean_3","MAP_RollingMean_3","DBP_RollingMean_3","Resp_RollingMean_3",
+        "HR_RollingStd_3","O2Sat_RollingStd_3","Temp_RollingStd_3",
+        "SBP_RollingStd_3","MAP_RollingStd_3","DBP_RollingStd_3","Resp_RollingStd_3",
+        "HR_Change","O2Sat_Change","Temp_Change",
+        "SBP_Change","MAP_Change","DBP_Change","Resp_Change",
+        "HR_Lag1","O2Sat_Lag1","Temp_Lag1",
+        "SBP_Lag1","MAP_Lag1","DBP_Lag1","Resp_Lag1",
+        "HR_RollingMax_3","O2Sat_RollingMax_3","Temp_RollingMax_3",
+        "SBP_RollingMax_3","MAP_RollingMax_3","DBP_RollingMax_3","Resp_RollingMax_3",
+        "HR_RollingMin_3","O2Sat_RollingMin_3","Temp_RollingMin_3",
+        "SBP_RollingMin_3","MAP_RollingMin_3","DBP_RollingMin_3","Resp_RollingMin_3",
+        "PulsePressure","ShockIndex"
+    ]
+]
+
     # ========================================================
     # Predict Class
     # ========================================================
@@ -77,10 +97,10 @@ def predict_sepsis(patient_df):
     # Risk Level
     # ========================================================
 
-    if probability >= 0.80:
+    if probability >= 0.70:
         risk_level = "High"
 
-    elif probability >= 0.50:
+    elif probability >= 0.45:
         risk_level = "Medium"
 
     else:
