@@ -296,6 +296,26 @@ Missing a patient with Sepsis (False Negative) is significantly more dangerous t
 This trade-off is common in medical diagnosis systems where patient safety is the highest priority.
 
 ---
+---
+
+## ⚠️ Known Limitations
+
+**PR-AUC in context**
+A PR-AUC of 0.0976 may look low in isolation, but with only ~1.8% Sepsis
+prevalence in this dataset, a random classifier would score around 0.018
+PR-AUC. This model performs roughly **5x better than random baseline**,
+which is the more meaningful comparison for severely imbalanced clinical data.
+
+**First-hour missing history**
+For a patient's first recorded hour, Lag and Change features have no prior
+reading to reference. These are currently filled with 0 as a simplification.
+This means "no prior data" and "genuinely no change" are represented
+identically, which could reduce sensitivity in early ICU hours — exactly
+when early detection matters most. A future improvement would be to add
+an explicit `is_first_hour` flag or use backward-fill within each patient
+group instead of a static 0.
+
+---
 
 # 🔍 Model Explainability using SHAP
 
