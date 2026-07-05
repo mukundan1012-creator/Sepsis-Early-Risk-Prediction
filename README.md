@@ -333,6 +333,21 @@ SHAP helps answer important questions such as:
 Using SHAP makes the model easier to interpret and helps build trust in its predictions.
 
 ---
+## SHAP Summary Plot
+
+The figure below shows how each feature influences the model's predictions across the test dataset.
+
+![SHAP Summary](screenshots/shap_summary.png)
+
+---
+
+## SHAP Feature Importance
+
+The mean absolute SHAP values highlight the overall importance of each feature.
+
+![SHAP Bar Plot](screenshots/shap_bar.png)
+
+---
 
 # 💻 Streamlit Web Application
 
@@ -345,8 +360,8 @@ The trained model was deployed using **Streamlit** to create an interactive and 
 - Automatic time-series feature engineering
 - Real-time Sepsis risk prediction
 - Probability-based risk estimation
+- Built-in Healthy Patient and High-Risk Patient demo buttons for quick testing
 - Low / Medium / High risk classification
-- Built-in healthy and high-risk demo patients
 - Medical disclaimer
 - Clean and responsive user interface
 
@@ -378,10 +393,12 @@ Sepsis-Early-Risk-Prediction/
 │   ├── predict.py
 │   └── evaluate.py
 │
-├── screenshots/
-│   ├── homepage.png
-│   ├── healthypatient.png
-│   └── riskpatient.png
+screenshots/
+├── homepage.png
+├── healthypatient.png
+├── riskpatient.png
+├── shap_summary.png
+└── shap_bar.png
 │
 └── data/
     ├── raw/
@@ -500,7 +517,9 @@ Always consult qualified healthcare professionals when making medical decisions.
 
 ## Mukundan D
 
-**Electronics and Communication Engineering Student**
+Electronics and Communication Engineering Undergraduate
+
+Passionate about Embedded Systems, TinyML, Edge AI, Machine Learning, and VLSI Design.
 
 ### Areas of Interest
 
