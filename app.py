@@ -143,11 +143,13 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### 📊 Model Performance")
     st.markdown("""
-- **Algorithm:** XGBoost  
-- **Recall:** 89.65%  
-- **ROC-AUC:** 0.790  
-- **Features:** 53 engineered  
-- **Explainability:** SHAP  
+    - **Algorithm:** XGBoost  
+    - **Recall:** 86.58% (threshold = 0.50)  
+    - **ROC-AUC:** 0.790  
+    - **PR-AUC:** 0.097 (~5× random baseline)  
+    - **Features:** 53 engineered  
+    - **Threshold:** 0.50 — chosen for clinical recall  
+    - **Explainability:** SHAP  
     """)
 
     st.markdown("---")
