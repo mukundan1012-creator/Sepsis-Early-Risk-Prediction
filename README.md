@@ -312,8 +312,7 @@ reading to reference. These are currently filled with 0 as a simplification.
 This means "no prior data" and "genuinely no change" are represented
 identically, which could reduce sensitivity in early ICU hours — exactly
 when early detection matters most. A future improvement would be to add
-an explicit `is_first_hour` flag or use backward-fill within each patient
-group instead of a static 0.
+an explicit `is_first_hour` flag or u"A future improvement would be to add an explicit is_first_hour feature or explore more advanced temporal imputation techniques."
 
 ---
 
